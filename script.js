@@ -5,7 +5,9 @@ const FlashCardApp = {
    deckDescription: '',
    reverse: false,
    options:[],
-    }
+   leech:'tag',
+   categoryId:""
+   }
  }
 }
 

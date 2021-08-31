@@ -2,7 +2,7 @@
 <html>
     <head>
      <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, intial-scale=1.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="style.css">
      <title>Flash Card App</title>
     </head>
@@ -39,10 +39,33 @@
          </div>
          </div>
 
-         <div>
-          value of reverse:
-          <strong>{{options}}</strong>
-         </div>
+         <div> 
+         <fieldset class="leech-action">
+          <legend>leech-action</legend>
+          <div>
+           <input v-model="leech" type="radio" id="tag" name="leech" value="tag">
+           <label for="tag"> tag</label>
+          </div>
+
+          <div>
+           <input v-model="leech" type="radio" id="suspend" name="leech" value="suspend">
+           <label for="suspend">suspend</label>
+          </div>
+         </fieldset>
+        </div>
+        <div>
+         <label for="category"> category: </label>
+         <select v-model="categoryId" name="category" id="category">
+          <option value="">Select</option>
+          <option value="1">Foreign Language</option>
+          <option value="2">History</option>
+          <option value="3">Biology</option>
+          <option value="4">Geography</option>
+          <option value="5">Law</option>
+          <option value="6">Programming</option>
+         </select>
+        </div>
+
         <button type="submit">Create</button>
        </form>
      </div>
