@@ -1,9 +1,11 @@
 const FlashCardApp = {
  data() {
   return {
-   deckName: "VueJs FundaMentals"
+   deckName: "VueJs FundaMentals",
+   cards,
+   flipped: false
   }
  }
 }
 
-Vue.createApp(FlashCardApp).mount('#app');
+const app = Vue.createApp(FlashCardApp).mount('#app');
