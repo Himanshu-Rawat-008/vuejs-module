@@ -9,10 +9,18 @@
     <body>
      <div id="app">
        <h1 v-text="deckName" ></h1>
-       <div class="card">
-        <h2 v-text="flipped? '': cards[0].front"></h2>
-        <div v-html="flipped? cards[0].back: '' " ></div>
+
+       <div class="user-input">
+        type something: 
+       <input type="text" v-model="userInput">
        </div>
+
+       <div class="card">
+        <h2 v-text="userInput=='flip' ? '': cards[0].front"></h2>
+        <div v-html="userInput=='flip'? cards[0].back: '' " ></div>
+       </div>
+
+      <a :href="readMoreUrl">Read More</a>
      </div>
      <script src="data.js"></script>
      </script><script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
