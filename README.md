@@ -30,3 +30,14 @@ Computed Vs Methods <br>
 <li>main difference is computed is cached and only calculated when necessary</li>
 <li>method will be calculated every that part of dom is rerendered</li>
 </ul>
+
+Conditional rendering <br>
+<ul>
+ <li> If Else
+  <ul>
+   <li><strong>v-if="expression"</strong></li>
+   <li><strong>v-else="expression"</strong></li>
+   <li><strong>v-else-if="expression"</strong></li>
+  </ul>
+ </li>
+</ul>
