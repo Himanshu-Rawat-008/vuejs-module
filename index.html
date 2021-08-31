@@ -7,11 +7,19 @@
      <title>Flash Card App</title>
     </head>
     <body>
-     <div id="app">
+     <div id="app" v-cloak>
        <h1 v-text="deckName" ></h1>
 
-       <div @click="flipped = !flipped"  class="card">
-        <h2  v-if="!flipped" v-text="front"></h2>
+        <div v-for="(card, index) in cards" class="card-pair">
+         <div v-if="editIndex == index " class="card">
+          <textarea @keydown.enter="editIndex = -1" v-model="card.front"></textarea>
+         </div>
+         <div v-else @click="editIndex = index" class="card" v-text="card.front"></div>
+         <div class="card" v-html="card.back"></div>
+        </div>
+
+       <!-- <div @click="flipped = !flipped"  class="card">
+        <h2 v-cloak v-if="!flipped" v-text="front"></h2>
         <div v-else v-html=" cards[index].back " ></div>
        </div>
 
@@ -20,7 +28,7 @@
         <button @click="move(1)" type="button">&#8594;</button>
        </div>
 
-       <a :href="readMoreUrl">Read More</a>
+       <a :href="readMoreUrl">Read More</a> -->
        <!-- <form method="post" action="">
         <div>
          <label for="name">Name:</label>

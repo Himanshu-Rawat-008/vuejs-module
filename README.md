@@ -35,9 +35,13 @@ Conditional rendering <br>
 <ul>
  <li> If Else
   <ul>
-   <li><strong>v-if="expression"</strong></li>
+   <li><strong>v-if="expression"</strong></li>s
    <li><strong>v-else="expression"</strong></li>
    <li><strong>v-else-if="expression"</strong></li>
   </ul>
  </li>
+
+ <li><strong>v-show="expression"</strong> it is different from v-if in sense that it loads value but hides it until expression is true but v-if is not hiding it just didnt load datapass`</li>
 </ul>
+
+<strong>v-cloak</strong> is directive which is used to hide expression until expression is rendered<br>

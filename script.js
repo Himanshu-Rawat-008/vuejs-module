@@ -3,6 +3,7 @@ const FlashCardApp = {
   return {
    deckName: "VueJs FundaMentals",
    cards,
+   editIndex:-1,
    index:0,
    flipped: false,
    readMoreUrl: 'https://v3.vuejs.org/guide',
