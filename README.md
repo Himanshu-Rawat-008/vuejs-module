@@ -14,3 +14,6 @@ v-model: = binding to setup 2 way communication bw vuejs and html
 
 
 v-on: = to add any different events "v-on:" shorthand is "@"
+
+
+methods : 

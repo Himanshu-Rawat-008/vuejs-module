@@ -10,16 +10,20 @@
      <div id="app">
        <h1 v-text="deckName" ></h1>
 
-       <div @click="flipped = !flipped"  class="card">
-        <h2 v-text="flipped? '': cards[index].front"></h2>
-        <div v-html="flipped ? cards[index].back: '' " ></div>
-       </div>
+       <form method="post" action="">
+        <div>
+         <label for="name">Name:</label>
+         <input v-model="deckName" type="text" id="name" name="name">({{deckName.length}} characters)
+        </div>
 
-       <div class="navigation">
-        <button @click="move(-1)" type="button">&#8592;</button>
-        <button @click="move(1)" type="button">&#8594;</button>
-       </div>
-      <a :href="readMoreUrl">Read More</a>
+        <div>
+         <label for="description">description</label>
+         <textarea v-model="deckDescription" id="description" name="description"></textarea>
+         ({{200-deckDescription.length}} left)
+        </div>
+
+        <button type="submit">Create</button>
+       </form>
      </div>
      <script src="data.js"></script>
      </script><script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
