@@ -8,6 +8,11 @@ const FlashCardApp = {
    leech:'tag',
    categoryId:""
    }
+ },
+ methods:{
+  submit(){
+   alert('submit...');
+  }
  }
 }
 

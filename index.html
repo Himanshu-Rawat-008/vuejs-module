@@ -13,12 +13,12 @@
        <form method="post" action="">
         <div>
          <label for="name">Name:</label>
-         <input v-model="deckName" type="text" id="name" name="name">({{deckName.length}} characters)
+         <input v-model.trim="deckName" type="text" id="name" name="name">({{deckName.length}} characters)
         </div>
 
         <div>
          <label for="description">description</label>
-         <textarea v-model="deckDescription" id="description" name="description"></textarea>
+         <textarea v-model.lazy="deckDescription" id="description" name="description"></textarea>
          ({{200-deckDescription.length}} left)
         </div>
 
@@ -55,7 +55,7 @@
         </div>
         <div>
          <label for="category"> category: </label>
-         <select v-model="categoryId" name="category" id="category">
+         <select v-model.number="categoryId" name="category" id="category">
           <option value="">Select</option>
           <option value="1">Foreign Language</option>
           <option value="2">History</option>
@@ -66,7 +66,7 @@
          </select>
         </div>
 
-        <button type="submit">Create</button>
+        <button @click.prevent="submit" type="submit">Create</button>
        </form>
      </div>
      <script src="data.js"></script>
