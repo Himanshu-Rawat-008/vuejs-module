@@ -19,7 +19,7 @@
         <div>
          <label for="description">description</label>
          <textarea v-model.lazy="deckDescription" id="description" name="description"></textarea>
-         ({{200-deckDescription.length}} left)
+         ({{ charsLeft() }} left)
         </div>
 
         <div class="options">

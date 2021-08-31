@@ -9,9 +9,17 @@ const FlashCardApp = {
    categoryId:""
    }
  },
+ computed:{
+  // charsLeft(){
+  //  return 200 - this.deckDescription.length;
+  // }
+ },
  methods:{
   submit(){
    alert('submit...');
+  },
+  charsLeft(){
+   return 200 - this.deckDescription.length;
   }
  }
 }

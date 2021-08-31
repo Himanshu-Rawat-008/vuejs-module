@@ -18,9 +18,15 @@ v-model: <br>
 </ul>
 
 methods : <br>
-Additional Modifiers <br>
+Additional Modifiers<br>
 <ul>
 <li>stop : stop propagation of events</li>
 <li>self : trigger handler only if the target is this element</li>
 <li>once: only trigger this once at most</li>
+</ul>
+
+Computed Vs Methods <br>
+<ul>
+<li>main difference is computed is cached and only calculated when necessary</li>
+<li>method will be calculated every that part of dom is rerendered</li>
 </ul>
