@@ -10,16 +10,15 @@
      <div id="app">
        <h1 v-text="deckName" ></h1>
 
-       <div class="user-input">
-        type something: 
-       <input type="text" v-model="userInput">
+       <div @click="flipped = !flipped"  class="card">
+        <h2 v-text="flipped? '': cards[index].front"></h2>
+        <div v-html="flipped ? cards[index].back: '' " ></div>
        </div>
 
-       <div class="card">
-        <h2 v-text="userInput=='flip' ? '': cards[0].front"></h2>
-        <div v-html="userInput=='flip'? cards[0].back: '' " ></div>
+       <div class="navigation">
+        <button @click="move(-1)" type="button">&#8592;</button>
+        <button @click="move(1)" type="button">&#8594;</button>
        </div>
-
       <a :href="readMoreUrl">Read More</a>
      </div>
      <script src="data.js"></script>
