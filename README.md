@@ -17,3 +17,6 @@ v-on: = to add any different events "v-on:" shorthand is "@"
 
 
 methods : 
+
+
+true-value and false-value with v-model; 

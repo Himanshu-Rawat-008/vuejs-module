@@ -3,6 +3,8 @@ const FlashCardApp = {
   return {
    deckName: "VueJs FundaMentals",
    deckDescription: '',
+   reverse: false,
+   options:[],
     }
  }
 }

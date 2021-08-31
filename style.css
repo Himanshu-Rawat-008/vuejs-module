@@ -128,11 +128,11 @@ form div {
 }
 
 .options {
- padding-left: 100px;
+ padding-left: 80px;
 }
 
 .options label {
- display: block;
+ display: inline-block;
  width: auto;
 }
 
