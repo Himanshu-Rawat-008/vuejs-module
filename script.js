@@ -81,4 +81,11 @@ const FlashCardApp = {
 }
 }
 
-const app = Vue.createApp(FlashCardApp).mount('#app');
+const app = Vue.createApp(FlashCardApp);
+
+app.component('read-more',{
+    template: '<a href="https://v3.vuejs.org/guide">Read more</a>',
+    name: ReadMOre
+})
+
+app.mount('#app');
