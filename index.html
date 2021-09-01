@@ -9,23 +9,14 @@
         <div id="app" v-cloak>
             <h1 v-text="deckName"></h1>
 
-            <div @click="flipped = !flipped" :class="{again: isRepeat}" class="card">
-                <h2 v-if="!flipped" v-text="front"></h2>
-                <div v-else >
-                  <div v-html="back"></div>
-                  <div class="score">
-                    <button @click.stop="gotIt">GOT IT</button>
-                    <button @click.stop="again">AGAIN</button>
-                  </div>
-              </div>
-            </div>
-
+            <flash-card :flipped="flipped" :is-repeat="isRepeat" :front="front" :back="back"></flash-card>
+            
             <div class="navigation">
                 <button @click="move(-1)" type="button">&#8592;</button>
                 <button @click="move(1)" type="button">&#8594;</button>
             </div> 
           
-          <read-more></read-more>
+          <read-more :url="readMoreUrl"></read-more>
         </div>
 
         <script src="data.js"></script>

@@ -84,8 +84,24 @@ const FlashCardApp = {
 const app = Vue.createApp(FlashCardApp);
 
 app.component('read-more',{
-    template: '<a href="https://v3.vuejs.org/guide">Read more</a>',
-    name: ReadMOre
+    template: '<a :href="readMoreUrl">Read more</a>',
+    name: 'ReadMore',
+    props:['url']
 })
 
+app.component('flash-card',{
+    template: '<div @click="flipped = !flipped" :class="{again: isRepeat}" class="card">\
+                <h2 v-if="!flipped" v-text="front"></h2>\
+                <div v-else >\
+                    <div v-html="back"></div>\
+                    <div class="score">\
+                    <button @click.stop="gotIt">GOT IT</button>\
+                    <button @click.stop="again">AGAIN</button>\
+                    </div>\
+                </div>\
+                </div>\
+                ',
+    name: 'FlashCard',
+    props:['flipped', 'isRepeat', 'front', 'back', 'gotIt', 'again']
+})
 app.mount('#app');

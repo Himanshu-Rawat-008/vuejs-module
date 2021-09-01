@@ -46,3 +46,9 @@ Conditional rendering <br>
 
 <strong>v-cloak</strong> is directive which is used to hide expression until expression is rendered<br>
 
+<strong>name.component</strong> is used to add component.<br>
+<ul>
+<li>name : In component if dont use ":" this add direct</li>
+<li>:name : In component if use ":" this add variable </li>
+</ul>
+
