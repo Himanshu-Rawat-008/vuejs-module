@@ -84,9 +84,14 @@ const FlashCardApp = {
 const app = Vue.createApp(FlashCardApp);
 
 app.component('read-more',{
-    template: '<a :href="url">Read more</a>',
+    template: '<a :href="url"><slot>Read More</slot></a><slot :year="year" name="copyright"></slot>',
     name: 'ReadMore',
-    props:['url']
+    props:['url'],
+    data(){
+        return{
+            year: 2021
+        }
+    }
 })
 
 app.component('flash-card',{

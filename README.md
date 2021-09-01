@@ -52,5 +52,8 @@ Conditional rendering <br>
 <li>:name : In component if use ":" this add variable </li>
 </ul>
 
-<strong>"$emit(\'flip\')"</strong> this will allow us to handle event flip in our root instance
+<strong>"$emit(\'flip\')"</strong> this will allow us to handle event flip in our root instance<br>
 
+<strong>slots</strong> comes in handy if you want to allow arbitary HTML content there.
+We can access data from the child component, when providing slot content, from parent component.
+<br>
