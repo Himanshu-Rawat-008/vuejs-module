@@ -16,12 +16,10 @@ h1 {
  color: #495057;
  box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.8), 0 4px 4px 0 rgba(0, 0, 0, 0.64), 0 4px 12px 0 rgba(0, 0, 0, 0.48);
  border-radius: 3px;
+ width: 50%;
+ height: 500px;
+ margin: 0 auto;
  cursor: pointer;
- width: 300px;
- height: 150px;
- text-align: center;
- padding: 10px;
- margin: 5px;
 }
 
 .card h2 {
@@ -30,13 +28,23 @@ h1 {
  padding-top: 231px;
 }
 
-.read-more {
+.card > div {
+ font-size: 24px;
  text-align: center;
- margin: 20px auto;
+ margin: 0 40px;
+ padding-top: 240px;
 }
 
-.read-more a {
+#app > a {
+ display: block;
+ text-align: center;
+ margin: 20px auto;
  color: #ffffff;
+}
+
+.navigation {
+ text-align: center;
+ margin: 20px auto;
 }
 
 .user-input {
@@ -62,27 +70,88 @@ button {
 
 [v-cloak] { display: none }
 
-.card-manager {
- width: 400px;
- display: flex; flex-wrap:wrap; width: 600px; margin: 0 auto; justify-content:center;
+.score {
+ margin-top: 50px;
+ display: flex;
+ justify-content: space-evenly;
 }
 
-.card-manager .card {
- height: 150px;
+.score button {
+ width: 200px;
+ cursor: pointer;
 }
 
-.card-manager .card p {
- font-size: 12px !important;
- margin: 0;
- padding-top: 0;
+.again {
+ background-color: #F6D55C;
+}
+
+.done {
+ text-align: center;
+}
+
+form {
+ width: 500px;
+ margin: 0 auto;
+ text-align: left;
+}
+
+label {
+ width: 100px;
+ display: inline-block;
+ vertical-align: middle;
+}
+
+button[type="submit"] {
+ width: 150px;
+ border-radius: 5px;
+ margin-left: 105px;
+}
+
+input[type="text"] {
+ width: 275px;
+ height: 40px;
+ border-radius: 5px;
+ font-size: 20px;
+ padding-left: 5px;
 }
 
 textarea {
- width: 300px;
- height: 90px;
+ width: 275px;
+ height: 150px;
+ border-radius: 5px;
+ font-size: 20px;
+ vertical-align: middle;
+ padding-left: 5px;
 }
 
-.card-pair {
- display: flex;
- justify-content: center;
+form div {
+ margin-bottom: 20px;
+}
+
+.options {
+ padding-left: 100px;
+}
+
+.options label {
+ display: block;
+ width: auto;
+}
+
+.leech-action {
+ margin-top: 15px;
+ width: 50%;
+}
+
+.leech-action label {
+ display: inline;
+}
+
+.category {
+ margin-top: 10px;
+}
+
+select {
+ height: 40px;
+ width: 275px;
+ font-size: 12px;
 }
