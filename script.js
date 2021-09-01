@@ -8,7 +8,19 @@ var app = new Vue({
     },
     methods:{
         addItem: function(product){
-            this.cart.push(product)
+            var whichProduct;
+            var existing = this.cart.filter((item,index)=>{
+                if(item.product.id == Number(product.id)){
+                    whichProduct = index;
+                    return true;
+                }
+                return false;
+            })
+            if(existing.length){
+                this.cart[whichProduct].qty++;
+            }
+            else
+                this.cart.push({product:product, qty:1})
         }
     },
     filters:{
