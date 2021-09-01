@@ -1,3 +1,15 @@
+Vue.component('price',{
+    data: function(){
+        return{
+            prefix: '$',
+            value: 23.34,
+            precision: 2,
+        }
+    },
+    template:`<span>{{ this.prefix + Number.parseFloat(this.value).toFixed(this.precision) }}</span>`
+})
+
+
 var app = new Vue({
     el: '#app',
     data:{
@@ -21,6 +33,29 @@ var app = new Vue({
             }
             else
                 this.cart.push({product:product, qty:1})
+        },
+        deleteItem: function(id){
+            if(this.cart[id]>1){
+                this.cart[id].qty--;
+            }else{
+                this.cart.split(id,1);
+            }
+        }
+    },
+    computed:{
+        cartTotal: function(){
+            let sum=0;
+            for(key in this.cart){
+                sum+=(this.cart[key].product.price * this.cart[key].qty);
+            }
+            return sum;
+        },
+        cartQty: function(){
+            let qty =0;
+            for(key in this.cart){
+                qty+=this.cart[key].qty;
+            }
+            return qty;
         }
     },
     filters:{

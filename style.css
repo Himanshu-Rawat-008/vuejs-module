@@ -1,4 +1,4 @@
-body {
+/* body {
  background-color: #0077b5;
  color: #ffffff;
  font-family:  Helvetica, Arial, sans-serif;
@@ -154,7 +154,7 @@ select {
  height: 40px;
  width: 275px;
  font-size: 12px;
-}
+} */
 
 .fade-enter, .fade-leave-to{
  opacity: 0;
