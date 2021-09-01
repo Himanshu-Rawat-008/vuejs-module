@@ -1,7 +1,8 @@
 This is for the Practice module <br>
 v-text - not render {{ }} while reloading instead of <h1>{{deckName}}</h1><br>
 v-html - to render html content inside text <br>
-v-bind:href="" - to bind href to vue "v-bind" shorthand is "@"<br>
+v-bind:href="" - to bind href to vue "v-bind" shorthand is ":"<br>
+v-on: = to add any different events "v-on:" shorthand is "@"<br>
 <ul>
  <li><strong>@click=""</strong> to handle click event </li>
  <li><strong>@click.prevent=""</strong> to prevent from default behaviour </li>
@@ -10,7 +11,6 @@ v-model: <br>
 <ul>
  <li>binding to setup 2 way communication bw vuejs and html<br></li>
  <li>with checkboxes and radio and select it saves value of them.<br></li>
- <li>v-on: = to add any different events "v-on:" shorthand is "@"<br><li>
  <li>true-value and false-value with v-model;<br></li>
  <li> <strong>v-model.trim=""</strong> for removing trailing white spaces</li>
  <li><strong>v-model.lazy=""</strong> for handling changes after we move to next </li>
@@ -66,3 +66,9 @@ npm run server <br>
 
 LifeCycle Hook in Vue<br>
 <strong>mounted</strong> is used when your component is added to DOM. To send HTTP request to fetch data.<br>
+
+Binding Classes with objects and arrays<br>
+<ul>
+<li>:class="['font-weight-bold', 'mr-2']"</li>
+<li>:style="{'width':'60px', 'text-align':'center'}"</li>
+</ul>
