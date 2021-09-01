@@ -11,6 +11,11 @@ var app = new Vue({
             this.cart.push(product)
         }
     },
+    filters:{
+        currency : function(value){
+            return '$' + Number.parseFloat(value).toFixed(2);
+        }
+    },
     mounted: function(){
         fetch('https://hplussport.com/api/products/order/price')
         .then(response=> response.json())
@@ -19,3 +24,7 @@ var app = new Vue({
         })
     }
 });
+
+// Vue.filters('currency', function(){
+
+// });

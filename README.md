@@ -75,3 +75,12 @@ Binding Classes with objects and arrays<br>
 
 Transition Classes - Vue HTML - fade<br>
 You can use animation framework <br>
+
+Filters<br>
+<ul>
+<li>Vue.js allows to define filters that can be used to apply text formatting</li>
+<li>Filters should be appended to the end of the javascript expression denoted by the "pipe" symbol</li>
+<li> Filter can be created outside vue component</li>
+<li> They can be chained means using multiple pipe character you can chain as many as you want </li>
+<li> Can be used with mustaches as well as with v-bind</li>
+</ul>
