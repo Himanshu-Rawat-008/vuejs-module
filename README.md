@@ -45,3 +45,4 @@ Conditional rendering <br>
 </ul>
 
 <strong>v-cloak</strong> is directive which is used to hide expression until expression is rendered<br>
+
