@@ -9,7 +9,15 @@
         <div id="app" v-cloak>
             <h1 v-text="deckName"></h1>
 
-            <flash-card :flipped="flipped" :is-repeat="isRepeat" :front="front" :back="back"></flash-card>
+            <flash-card  
+              @flip="flipped=!flipped"
+              @yes="gotIt"
+              @no="again" 
+              :flipped="flipped" 
+              :is-repeat="isRepeat" 
+              :front="front" 
+              :back="back">
+            </flash-card>
             
             <div class="navigation">
                 <button @click="move(-1)" type="button">&#8592;</button>

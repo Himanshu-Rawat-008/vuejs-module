@@ -52,3 +52,5 @@ Conditional rendering <br>
 <li>:name : In component if use ":" this add variable </li>
 </ul>
 
+<strong>"$emit(\'flip\')"</strong> this will allow us to handle event flip in our root instance
+
