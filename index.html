@@ -9,21 +9,28 @@
     </head>
     <body class="container">
       <div class="container" id="app">
-        <nav class="navbar navbar-light bg-light fixed-top"
-          v-if="cart.length>0">
-          <div class="navbar-text ms-auto">
+        <nav class="navbar navbar-light fixed-top">
+          <div class="navbar-text ms-auto d-flex">
+            <button class="btn btn-sm btn-outline-success" @click="sliderStatus=!sliderStatus">$</button>
+          <div class="ms-2" v-if="cart.length>0">
             <b> cart: {{cart.length}}</b>
             <span class="badge badge-success"> {{cart.length}}   </span>
+          
+          </div>
           </div>
         </nav>
 
         <h1>My Shop</h1>
 
-        <div class="d-flex align-items-center">
-          <label :class="['font-weight-bold', 'mr-2']" for="formMax">max</label>
-          <input type="text" id="formMax" class="form-control w-25" v-model="maximum">
-          <input type="range" class="custom-range" min="0" max="200" v-model="maximum">
-        </div>
+        <transition name="fade">
+          <div v-if="sliderStatus"> 
+            <div class="d-flex align-items-center" v-if="sliderStatus">
+              <label :class="['font-weight-bold', 'mr-2']" for="formMax">max</label>
+              <input type="text" id="formMax" class="form-control w-25" v-model="maximum">
+              <input type="range" class="custom-range" min="0" max="200" v-model="maximum">
+            </div>
+          </div>
+        </transition>
         <div class="row d-flex mb-3 align-items-center"
           v-for="item in products"
           v-if="item.price<=Number(maximum)">

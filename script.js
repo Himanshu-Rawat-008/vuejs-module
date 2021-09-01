@@ -3,7 +3,8 @@ var app = new Vue({
     data:{
         maximum:99,
         products: null,
-        cart: []
+        cart: [],
+        sliderStatus: false
     },
     methods:{
         addItem: function(product){

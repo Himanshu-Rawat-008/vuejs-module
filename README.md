@@ -72,3 +72,6 @@ Binding Classes with objects and arrays<br>
 <li>:class="['font-weight-bold', 'mr-2']"</li>
 <li>:style="{'width':'60px', 'text-align':'center'}"</li>
 </ul>
+
+Transition Classes - Vue HTML - fade<br>
+You can use animation framework <br>
