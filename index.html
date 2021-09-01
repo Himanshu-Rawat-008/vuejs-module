@@ -2,36 +2,38 @@
 <html lang="en-US">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="style.css">
-        <title>Flash Card App</title>
+        <title>Vue App</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     </head>
-    <body>
-        <div id="app" v-cloak>
-            <h1 v-text="deckName"></h1>
-
-            <flash-card  
-              @flip="flipped=!flipped"
-              @yes="gotIt"
-              @no="again" 
-              :flipped="flipped" 
-              :is-repeat="isRepeat" 
-              :front="front" 
-              :back="back">
-            </flash-card>
-            
-            <div class="navigation">
-                <button @click="move(-1)" type="button">&#8592;</button>
-                <button @click="move(1)" type="button">&#8594;</button>
-            </div> 
-          
-          <read-more :url="readMoreUrl">
-            Click Here
-            <template v-slot:copyright="props"><p>{{props.year}}  FlashCard App</p></template>
-          </read-more>
+    <body class="container mt-4">
+      <div class="container" id="app">
+        <div class="form-inline mr-auto">
+          <label class="font-weight-bold mr-2" for="formMax">max</label>
+           <input type="text" id="formMax" class="form-control w-25" v-model="maximum">
         </div>
-
-        <script src="data.js"></script>
-        <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script>
+        <input type="range" class="custom-range" min="0" max="200" v-model="maximum">
+        <div class="row d-flex mb-3 align-items-center"
+          v-for="item in products"
+          v-if="item.price<=Number(maximum)">
+          <div class="col-sm-4">
+            <img class="img-fluid d-block" :src="item.image" :alt="item.name">
+          </div>
+          
+          <div class="col">
+            <h3 class="text-info">{{ item.name }}</h3>
+            <p class="mb-0">{{item.description}}</p>
+            <div class="h5 float-right">${{Number(item.price)}}</div>
+          </div>
+        </div>
+      </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js" integrity="sha512-XLo6bQe08irJObCc86rFEKQdcFYbGGIHVXcfMsxpbvF8ompmd1SNJjqVY5hmjQ01Ts0UmmSQGfqpt3fGjm6pGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+        <!-- <script src="https://unpkg.com/vue@3.0.7/dist/vue.global.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
         <script src="script.js"></script>
     </body>
 </html>

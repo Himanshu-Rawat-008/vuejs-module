@@ -17,6 +17,8 @@ v-model: <br>
  <li><strong>v-model.number</strong> for converting string to number</li>
 </ul>
 
+<strong>v-for="items in products"</strong> looping through array or objects<br>
+
 methods : <br>
 Additional Modifiers<br>
 <ul>
@@ -57,3 +59,10 @@ Conditional rendering <br>
 <strong>slots</strong> comes in handy if you want to allow arbitary HTML content there.
 We can access data from the child component, when providing slot content, from parent component.
 <br>
+
+<strong>Create Project With CLI</strong><br>
+Run command: vue create flashcard-app<br>
+npm run server <br>
+
+LifeCycle Hook in Vue<br>
+<strong>mounted</strong> is used when your component is added to DOM. To send HTTP request to fetch data.<br>
