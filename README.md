@@ -69,9 +69,11 @@ Conditional rendering <br>
 We can access data from the child component, when providing slot content, from parent component.
 <br>
 
+npm install -g vue-cli<br>
 <strong>Create Project With CLI</strong><br>
 Run command: vue create flashcard-app<br>
 npm run server <br>
+vue init <template-name> <project-name><br>
 
 LifeCycle Hook in Vue<br>
 <strong>mounted</strong> is used when your component is added to DOM. To send HTTP request to fetch data.<br>
@@ -95,3 +97,6 @@ Filters<br>
 </ul>
 
 We can pass props as Object or Arrays.<br>
+
+<b>ref</b> will get this.$refs.tag.property <br>
+
