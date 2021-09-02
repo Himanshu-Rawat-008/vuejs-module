@@ -1,16 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <DeckName name="Vue.js Fundamentals"/>
+  <div id="app" class="container mt-5"> 
+    <h1>My Shop</h1>
+    <p class="animated fadeInRight">Take a look at our offering</p>
+    <font-awesome-icon icon="shopping-cart"></font-awesome-icon>
+  </div>
 </template>
 
 <script>
 
-import DeckName from './components/DeckName.vue';
-
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome"
 export default {
   name: 'App',
   components: {
-    DeckName,
+    FontAwesomeIcon,
   }
 }
 </script>

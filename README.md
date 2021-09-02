@@ -61,6 +61,10 @@ Conditional rendering <br>
 <li>item here is argument to parent function</li>
 </ul>
 
+<strong>Modifiers<br></strong>
+<strong>Key Events</strong><br23>
+
+
 <strong>slots</strong> comes in handy if you want to allow arbitary HTML content there.
 We can access data from the child component, when providing slot content, from parent component.
 <br>
