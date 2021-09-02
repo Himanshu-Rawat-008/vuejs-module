@@ -54,7 +54,12 @@ Conditional rendering <br>
 <li>:name : In component if use ":" this add variable </li>
 </ul>
 
-<strong>"$emit(\'flip\')"</strong> this will allow us to handle event flip in our root instance<br>
+<strong>"$emit(\'flip\')"</strong> <br>
+<strong>"$emit('add', item)"</strong><br>
+<ul>
+<li>this will allow us to handle event flip in our root instance</li>
+<li>item here is argument to parent function</li>
+</ul>
 
 <strong>slots</strong> comes in handy if you want to allow arbitary HTML content there.
 We can access data from the child component, when providing slot content, from parent component.
@@ -84,3 +89,5 @@ Filters<br>
 <li> They can be chained means using multiple pipe character you can chain as many as you want </li>
 <li> Can be used with mustaches as well as with v-bind</li>
 </ul>
+
+We can pass props as Object or Arrays.<br>

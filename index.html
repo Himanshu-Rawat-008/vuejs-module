@@ -18,14 +18,16 @@
               aria-haspopup="true" aria-expanded="false">
               <b> cart:</b>
               <span class="badge badge-pill badge-light"> {{cartQty}}</span>
-              {{cartTotal | currency}}
+              <price :value="Number(cartTotal)"></price>
               </button>
               <div class="dropdown-menu dropdown-menu-left"
               aria-labelledby="cartDropDown">
                 <div v-for="(item, index) in cart" :key="index">
                   <div class="dropdown-item-text text-nowrap text-right">
                     <span class="badge badge-pill badge-warning align-text-top mr-1">{{ item.qty}}</span>
-                    {{item.product.name}} <b>{{(item.qty* item.product.price)| currency}}</b>
+                    {{item.product.name}} <b>
+                      <price :value="Number(item.qty * item.product.price)"></price>
+                      </b>
                     <a href="#" @click.stop="deleteItem(index)"
                     class="badge badge-danger text-white">-</a>
                   </div>
@@ -37,6 +39,11 @@
 
         <h1>My Shop</h1>
 
+        <product-list 
+          :products="products"
+          :maximum = "maximum"
+          @add="addItem"
+        ></product-list>
         <transition name="fade">
           <div v-if="sliderStatus"> 
             <div class="d-flex align-items-center" v-if="sliderStatus">
@@ -46,30 +53,8 @@
             </div>
           </div>
         </transition>
-        <div class="row d-flex mb-3 align-items-center"
-          v-for="(item,index) in products"
-          :key="item.id"   
-          v-if="item.price<=Number(maximum)">
-          <div class="col-1 m-auto">
-            <button class="btn btn-info" @click="addItem(item)">+</button>
-          </div>
-          <div class="col-4">
-            <img class="img-fluid d-block" :src="item.image" :alt="item.name">
-          </div>
-          
-          <div class="col">
-            <h3 class="text-info">{{ item.name }}</h3>
-            <p class="mb-0">{{item.description}}</p>
-            <div class="h5 float-right">
-              <price 
-                :value="item.price" 
-                prefix="$" 
-                :precision="2" 
-                conversion="1">
-              </price>
-            </div>
-          </div>
-        </div> 
+
+        
       </div>
         
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
